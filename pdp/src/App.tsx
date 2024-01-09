@@ -11,7 +11,7 @@ const App = () => {
     <div className='text-3xl mx-auto max-w-6xl'>
       <SafeComponent>
         <Suspense fallback={<div>Loading...</div>}>
-          <Header app={{ name: 'pdp' }} />
+          <Header />
         </Suspense>
       </SafeComponent>
 
