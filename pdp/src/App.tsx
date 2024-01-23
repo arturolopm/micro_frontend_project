@@ -1,25 +1,29 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import './index.scss';
-import SafeComponent from './components/SafeComponent';
-const Header = lazy(() => import('home/Header'));
-const Footer = lazy(() => import('home/Footer'));
+import Header from 'home/Header';
+import Footer from 'home/Footer';
+import PDPContent from './components/PDPContent';
 
 const App = () => {
   return (
-    <div className='text-3xl mx-auto max-w-6xl'>
-      <SafeComponent>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Header />
-        </Suspense>
-      </SafeComponent>
+    <Router>
+      <div className='text-3xl mx-auto max-w-6xl'>
+        <Header />
 
-      <div className=' my-10'>PDP page</div>
-      <Suspense fallback={<div>Loading...</div>}>
+        <div className=' my-10'>
+          <Routes>
+            <Route
+              path='/product/:id'
+              element={<PDPContent />}
+            />
+          </Routes>
+        </div>
         <Footer />
-      </Suspense>
-    </div>
+      </div>
+    </Router>
   );
 };
 ReactDOM.render(<App />, document.getElementById('app'));
