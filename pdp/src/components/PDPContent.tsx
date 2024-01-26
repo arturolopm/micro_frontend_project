@@ -6,7 +6,9 @@ import { Product } from '../types';
 const PDPContent = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<Product | null>(null);
-
+  //   {
+  //     51.48;
+  //   }
   useEffect(() => {
     if (id) {
       getProductById(id).then(setProduct);

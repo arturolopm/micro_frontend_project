@@ -4,15 +4,15 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import 'remixicon/fonts/remixicon.css';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomeContent from './components/HomeContent';
+import Header from 'home/Header';
+import Footer from 'home/Footer';
+import CartContent from './components/CartContent';
 
 const App = () => (
-  <div className='text-3xl mx-auto max-w-6xl'>
+  <div className='mx-auto max-w-6xl'>
     <Header />
     <div className=' my-10'>
-      <HomeContent />
+      <CartContent />
     </div>
     <Footer />
   </div>
